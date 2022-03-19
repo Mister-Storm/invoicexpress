@@ -1,31 +1,16 @@
 package com.misterstorm.invoicexpress.domain.model.client;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import com.misterstorm.invoicexpress.domain.model.invoice.Invoice;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Set;
 
+import static com.misterstorm.invoicexpress.domain.TestConstants.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 class ClientTest {
-
-    private static final String CLIENT_NAME = "Bob";
-    private static final String CLIENT_EMAIL = "bob@bob.com";
-    private static final long INVOICE_ID = 1L;
-    private static final long FISCAL_ID = 99999L;
-    private static final long SECOUND_INVOICE_ID = 2L;
-    private static final long SECOUND_FISCAL_ID = 29999L;
-    private static final long THIRD_INVOICE_ID = 3L;
-    private static final long THIRD_FISCAL_ID = 39999L;
-    private static final Invoice INVOICE = new Invoice(INVOICE_ID, FISCAL_ID);
-    private static final Invoice SECOUND_INVOICE = new Invoice(SECOUND_INVOICE_ID, SECOUND_FISCAL_ID);
-    private static final Invoice THIRD_INVOICE = new Invoice(THIRD_INVOICE_ID, THIRD_FISCAL_ID);
-    private static final int EXPECTED_SET_SIZE = 1;
-    private static final int EXPECTED_SET_SIZE_2 = 2;
-    private static final int EXPECTED_SET_SIZE_3 = 3;
 
     Client client;
 
