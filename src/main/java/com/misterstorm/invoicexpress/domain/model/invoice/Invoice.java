@@ -6,10 +6,12 @@ public class Invoice {
 
     private final Long id;
     private final Long fiscalId;
+    private boolean registeredInBahamasGov;
 
     public Invoice(Long id, Long fiscalId) {
         this.id = id;
         this.fiscalId = fiscalId;
+        this.registeredInBahamasGov = false;
     }
 
     public Long getId() {
@@ -18,6 +20,14 @@ public class Invoice {
 
     public Long getFiscalId() {
         return fiscalId;
+    }
+
+    public boolean isRegisteredInBahamasGov() {
+        return registeredInBahamasGov;
+    }
+
+    public void registrationPerformed() {
+        this.registeredInBahamasGov = true;
     }
 
     @Override

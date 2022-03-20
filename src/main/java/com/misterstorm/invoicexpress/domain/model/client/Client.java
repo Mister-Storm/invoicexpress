@@ -1,6 +1,7 @@
 package com.misterstorm.invoicexpress.domain.model.client;
 
 import com.misterstorm.invoicexpress.domain.model.invoice.Invoice;
+import com.misterstorm.invoicexpress.domain.model.invoice.InvoiceNotFoundException;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -35,6 +36,17 @@ public class Client {
     }
     public void addAllInvoices(Set<Invoice> invoices) {
         this.invoices.addAll(invoices);
+    }
+    public Invoice getAnInvoice(Long invoiceId) {
+        return this.invoices.stream()
+                .filter(invoice -> invoice.getId().equals(invoiceId))
+                .findFirst().orElseThrow(() -> new InvoiceNotFoundException(invoiceId));
+    }
+    public void updateInvoice(Long invoiceId) {
+        this.invoices.stream()
+                .filter(invoice -> invoice.getId().equals(invoiceId))
+                .forEach(Invoice::registrationPerformed);
+
     }
 
 }
