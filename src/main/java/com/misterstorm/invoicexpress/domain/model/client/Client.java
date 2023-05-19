@@ -19,6 +19,12 @@ public class Client {
         this.invoices = new HashSet<>();
     }
 
+    public Client(String name, String email, Set<Invoice> invoices) {
+        this.name = name;
+        this.email = email;
+        this.invoices = invoices;
+    }
+
     public String getName() {
         return name;
     }
